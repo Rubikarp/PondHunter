@@ -1,0 +1,398 @@
+fileFormatVersion: 2
+guid: 9f94f076750452d4ab8cbe90c52a4dab
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4720618703755494305
+    second: SheetFrogPlaceholder_head
+  - first:
+      213: -2592501571434379180
+    second: SheetFrogPlaceholder_1
+  - first:
+      213: -552018474369949267
+    second: SheetFrogPlaceholder_2
+  - first:
+      213: -9136592607552311177
+    second: SheetFrogPlaceholder_body
+  - first:
+      213: -9017785678276353678
+    second: SheetFrogPlaceholder_4
+  - first:
+      213: -4178601524200660861
+    second: SheetFrogPlaceholder_5
+  - first:
+      213: -7272917019576337234
+    second: SheetFrogPlaceholder_6
+  - first:
+      213: 6142338281568016037
+    second: SheetFrogPlaceholder_eye2
+  - first:
+      213: 2307859329721894479
+    second: SheetFrogPlaceholder_eye1
+  - first:
+      213: -174931365863449016
+    second: SheetFrogPlaceholder_pupils2
+  - first:
+      213: -7442240123683084965
+    second: SheetFrogPlaceholder_pupils1
+  - first:
+      213: -2303588674427897350
+    second: SheetFrogPlaceholder_iris2
+  - first:
+      213: -6404868916604895630
+    second: SheetFrogPlaceholder_iris1
+  - first:
+      213: -2309375153231869997
+    second: SheetFrogPlaceholder_13
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_head
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 908
+        width: 443
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3496d33b1038140800000000000000
+      internalID: 4720618703755494305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_1
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 890
+        width: 226
+        height: 277
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45803037e85950cd0800000000000000
+      internalID: -2592501571434379180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_2
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 898
+        width: 174
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da1e9bd4f16d658f0800000000000000
+      internalID: -552018474369949267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_body
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 462
+        width: 537
+        height: 411
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77072616e6d443180800000000000000
+      internalID: -9136592607552311177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_4
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 587
+        width: 99
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271abb134b36ad280800000000000000
+      internalID: -9017785678276353678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_5
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 558
+        width: 169
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3802d1c8d00a206c0800000000000000
+      internalID: -4178601524200660861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_eye2
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 255
+        width: 101
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a61523af18fd3550800000000000000
+      internalID: 6142338281568016037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_eye1
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 248
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4605a335d9270020800000000000000
+      internalID: 2307859329721894479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_pupils2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 163
+        width: 24
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e92ad79d4829df0800000000000000
+      internalID: -174931365863449016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_pupils1
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 159
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55e5b6c90ad7b890800000000000000
+      internalID: -7442240123683084965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_iris2
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 81
+        width: 35
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9bc183e420800e0800000000000000
+      internalID: -2303588674427897350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SheetFrogPlaceholder_iris1
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 78
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ef2d0a7a55d17a0800000000000000
+      internalID: -6404868916604895630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
