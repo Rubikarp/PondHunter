@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputHandler : MonoBehaviour
+public class InputHandler : Singleton<InputHandler>
 {
     [Header("Inputs")]
 
@@ -29,18 +29,19 @@ public class InputHandler : MonoBehaviour
         moveVector = new Vector2(leftStickX, leftStickY);
 
         //Je prends les valeurs du stick droit
-        float rightStickX = Input.GetAxis("Horizontal");
-        float rightStickY = Input.GetAxis("Vertical");
+        float rightStickX = Input.GetAxis("AimHorizontal");
+        float rightStickY = Input.GetAxis("AimVertical");
         aimVector = new Vector2(rightStickX, rightStickY);
 
         //Je prends les buttons
-        pull = Input.GetButton("Pull");
-        pullExit = Input.GetButtonUp("Pull");
-        pullEnter = Input.GetButtonDown("Pull");
+        shoot = Input.GetButton("Fire1");
+        shootExit = Input.GetButtonUp("Fire1");
+        shootEnter = Input.GetButtonDown("Fire1");
 
-        shoot = Input.GetButton("Shoot");
-        shootExit = Input.GetButtonUp("Shoot");
-        shootEnter = Input.GetButtonDown("Shoot");
+        pull = Input.GetButton("Fire2");
+        pullExit = Input.GetButtonUp("Fire2");
+        pullEnter = Input.GetButtonDown("Fire2");
+
     }
 
 }
