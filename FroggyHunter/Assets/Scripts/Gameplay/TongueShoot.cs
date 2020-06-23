@@ -105,10 +105,10 @@ public class TongueShoot : MonoBehaviour
             tongue.size = new Vector2(0, 1);
         }
     }
-
     private void OnDrawGizmos()
     {
         Handles.color = Color.red;
         Handles.DrawWireDisc(transform.position, transform.forward, radius);
     }
+
 }

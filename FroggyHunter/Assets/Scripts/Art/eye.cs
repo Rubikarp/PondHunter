@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class eye : MonoBehaviour
+public class Eye : MonoBehaviour
 {
     [SerializeField] float range = 0.2f;
     [SerializeField] float lookSpeed = 5.0f;
@@ -20,7 +20,7 @@ public class eye : MonoBehaviour
         float distanceX = target.position.x - transform.position.x;
         float distanceY = target.position.y - transform.position.y;
 
-        lookingVec = new Vector2(distanceX, distanceY);
+        lookingVec = new Vector2(distanceX, distanceY).magnitude > 1? new Vector2(distanceX, distanceY).normalized : new Vector2(distanceX, distanceY);
 
         transform.position = originePos + lookingVec.normalized * range;
 
