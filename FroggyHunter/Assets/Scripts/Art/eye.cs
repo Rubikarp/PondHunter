@@ -20,9 +20,16 @@ public class Eye : MonoBehaviour
         float distanceX = target.position.x - transform.position.x;
         float distanceY = target.position.y - transform.position.y;
 
-        lookingVec = new Vector2(distanceX, distanceY).magnitude > 1? new Vector2(distanceX, distanceY).normalized : new Vector2(distanceX, distanceY);
+        lookingVec = new Vector2(distanceX, distanceY);
 
-        transform.position = originePos + lookingVec.normalized * range;
+        if (lookingVec.magnitude > 1)
+        {
+            transform.position = originePos + lookingVec.normalized * range;
+        }
+        else
+        {
+            transform.position = originePos + lookingVec * range;
+        }
 
     }
 }
