@@ -7,13 +7,9 @@ public class InsectBehavior : MonoBehaviour
     [Header("Component")]
     public RestrictedArea insectArea = null;
 
-    /*
-    public enum Direction { Right, Left, Up, Down };
-    [SerializeField] private Direction dir = Direction.Right;
-    */
-
     [Header("Variables")]
     public int point = 10;
+    public bool isTrapped = false;
 
     [SerializeField] private float speed = 5f;
     [Range(0, 2)] [SerializeField] private float randomScale = 1f;
@@ -40,17 +36,19 @@ public class InsectBehavior : MonoBehaviour
 
         Vector3 moveDir = new Vector2( (moveX - directionX) * 2, (moveY - directionY) * 2).normalized * speed;
 
-        if (insectArea.InZone(transform))
+        if (!isTrapped)
         {
-            transform.position += moveDir * speed * Time.deltaTime;
+            if (insectArea.InZone(transform))
+            {
+                transform.position += moveDir * speed * Time.deltaTime;
+            }
+            else
+            //Il peut revenir dans la zone de jeu
+            if (insectArea.CanMoveInDir(transform, moveDir))
+            {
+                transform.position += moveDir * speed * Time.deltaTime;
+            }
         }
-        else
-        //Il veut revenir dans la zone de jeu
-        if (insectArea.CanMoveInDir(transform, moveDir))
-        {
-            transform.position += moveDir * speed * Time.deltaTime;
-        }
-
     }
 
 }

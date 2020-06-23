@@ -59,10 +59,10 @@ public class InstinctJauge : MonoBehaviour
     {
         if (slowMoVolume.weight > 0.01)
         {
-            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0, 3 * Time.deltaTime);
+            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0, 10 * Time.deltaTime);
         }
 
-        Time.timeScale = 1f;
+        Time.timeScale = Mathf.Lerp(Time.timeScale, 1, 10 * Time.deltaTime);
     }
 
     //Ralentissement du temps

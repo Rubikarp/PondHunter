@@ -15,7 +15,7 @@ public class InsectManager : MonoBehaviour
     [SerializeField] private GameObject insectPrefab = null;
 
     private void Start()
-    {
+    {        
         GameObject insect = null;
 
         for (int i = 0; i < 4; i++)
@@ -27,11 +27,14 @@ public class InsectManager : MonoBehaviour
 
     void Update()
     {
+        //Verifie qu'il y ai bien 4 insectes
         if(insectList.Count < 4)
         {
             GameObject insect = Instantiate(insectPrefab, insectSpawnPos[Random.Range(0, insectSpawnPos.Length - 1)], Quaternion.identity, insectContainer);
             insect.GetComponent<InsectBehavior>().insectArea = insectArea;
         }
+
+
     }
 
     private void OnDrawGizmos()

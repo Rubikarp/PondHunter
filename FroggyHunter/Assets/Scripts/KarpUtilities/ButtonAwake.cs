@@ -6,7 +6,6 @@ namespace Management
     [RequireComponent(typeof(Collider2D))]
     public class ButtonAwake : MonoBehaviour
     {
-        private InputManager _input;
         public UnityEvent onInteraction;
 
         private void OnEnable()

@@ -1206,10 +1206,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   insectArea: {fileID: 288854697}
   insectSpawnPos:
-  - {x: 10, y: 6, z: 0}
-  - {x: -10, y: -6, z: 0}
-  - {x: 10, y: -6, z: 0}
-  - {x: -10, y: 6, z: 0}
+  - {x: 8, y: 4.5, z: 0}
+  - {x: -8, y: -4.5, z: 0}
+  - {x: 8, y: -4.5, z: 0}
+  - {x: -8, y: 4.5, z: 0}
   insectContainer: {fileID: 596002490}
   insectPrefab: {fileID: 427015457882775895, guid: 7ea246fa1b7d9534c8a659d8ad95bc86,
     type: 3}
@@ -1224,7 +1224,7 @@ GameObject:
   - component: {fileID: 599688695}
   - component: {fileID: 599688697}
   - component: {fileID: 599688696}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1286,7 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 599688694}
-  m_CullTransparentMesh: 0
+  m_CullTransparentMesh: 1
 --- !u!1 &715269207
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 840936278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.55, y: -7.83, z: 0}
+  m_LocalPosition: {x: 9.5, y: -5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 288854696}
@@ -2321,7 +2321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686683431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 7.5, z: 0}
+  m_LocalPosition: {x: -9.5, y: 5.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 288854696}
