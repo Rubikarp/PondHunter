@@ -1,15 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class InstinctJauge : MonoBehaviour
 {
     [Header("Component")]
     private InputHandler input = null;
+    [SerializeField] private Slider slider = null;
+    [SerializeField] Volume slowMoVolume = null;
 
     [Header("Variables")]
     [SerializeField] private float maxInstinct = 2f;
     [SerializeField] private float instinct = 2f;
+
+    [SerializeField] private float instinctTimeScale = 0.3f;
 
     [SerializeField] private float consumSpeed = 1f;
     [SerializeField] private float regenSpeed = 0.5f;
@@ -22,6 +26,8 @@ public class InstinctJauge : MonoBehaviour
     void Start()
     {
         instinct = maxInstinct;
+        slider.maxValue = maxInstinct;
+
     }
 
     void Update()
@@ -30,22 +36,58 @@ public class InstinctJauge : MonoBehaviour
         {
             if (instinct > 0)
             {
-                Time.timeScale = 0.5f;
-                instinct -= consumSpeed * Time.deltaTime;
+                StaminaConsume();
+                OnFocus();
             }
             else
             {
-                Time.timeScale = 1f;
+                EndFocus();
             }
         }
         else
         {
-            Time.timeScale = 1f;
+            EndFocus();
 
-            if (instinct < maxInstinct)
-            {
-                instinct += regenSpeed * Time.deltaTime;
-            }
+            StaminaRecover();
+        }
+
+        slider.value = instinct;
+    }
+
+    //Retour à TimeScale de 1
+    private void EndFocus()
+    {
+        if (slowMoVolume.weight > 0.01)
+        {
+            slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 0, 3 * Time.deltaTime);
+        }
+
+        Time.timeScale = 1f;
+    }
+
+    //Ralentissement du temps
+    private void OnFocus()
+    {
+        Time.timeScale = Mathf.Lerp(Time.timeScale, instinctTimeScale, 10 * Time.deltaTime);
+
+        slowMoVolume.weight = Mathf.Lerp(slowMoVolume.weight, 1, 10 * Time.deltaTime);
+    }
+
+    private void StaminaConsume()
+    {
+        instinct -= consumSpeed * Time.deltaTime;
+    }
+
+    private void StaminaRecover()
+    {
+        if (instinct < maxInstinct)
+        {
+            instinct += regenSpeed * Time.deltaTime;
+        }
+        else
+        {
+            instinct = maxInstinct;
         }
     }
+
 }

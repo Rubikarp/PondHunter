@@ -5,41 +5,51 @@ using UnityEngine;
 public class InsectBehavior : MonoBehaviour
 {
     [Header("Component")]
-    [SerializeField] private RestrictedArea insectArea = null;
+    public RestrictedArea insectArea = null;
 
-
+    /*
     public enum Direction { Right, Left, Up, Down };
     [SerializeField] private Direction dir = Direction.Right;
+    */
 
     [Header("Variables")]
+    public int point = 10;
+
     [SerializeField] private float speed = 5f;
-    [Range(1,5)] [SerializeField] private float randomScale = 1f;
+    [Range(0, 2)] [SerializeField] private float randomScale = 1f;
+    [Range(0, 1)] [SerializeField] private float directionX = 0.5f, directionY = 0.5f;
 
-    [SerializeField] Vector2 perlinSeedX = Vector2.zero;
-    [SerializeField] Vector2 perlinSeedY = Vector2.zero;
+    private Vector2 perlinSeedX = Vector2.zero, perlinSeedY = Vector2.zero;
 
-    [SerializeField] private float moveX = 1f;
-    [SerializeField] private float moveY = 1f;
-
-    [SerializeField] Vector3 moveDir = Vector2.zero;
+    private void OnEnable() => InsectManager.insectList.Add(this);
+    private void OnDisable() => InsectManager.insectList.Remove(this);
 
     void Start()
     {
-        perlinSeedX = new Vector2(Random.Range(-100, 100), Random.Range(-100, 100));
-        perlinSeedY = new Vector2(Random.Range(-100, 100), Random.Range(-100, 100));
+        perlinSeedX = new Vector2(Random.Range(-1000, 1000), Random.Range(-1000, 1000));
+        perlinSeedY = new Vector2(Random.Range(-1000, 1000), Random.Range(-1000, 1000));
     }
 
     void Update()
     {
-        perlinSeedX += Vector2.one * randomScale * Time.deltaTime;
-        perlinSeedY += Vector2.one * randomScale * Time.deltaTime;
+        perlinSeedX += Vector2.one * Random.value * randomScale * Time.deltaTime;
+        perlinSeedY += Vector2.one * Random.value * randomScale * Time.deltaTime;
 
-        moveX = Mathf.PerlinNoise(perlinSeedX.x, perlinSeedX.y);
-        moveY = Mathf.PerlinNoise(perlinSeedY.x, perlinSeedY.y);
+        float moveX = Mathf.PerlinNoise(perlinSeedX.x, perlinSeedX.y);
+        float moveY = Mathf.PerlinNoise(perlinSeedY.x, perlinSeedY.y);
 
-        moveDir = new Vector2( (moveX -0.45f) * 2, (moveY - 0.45f) * 2) * speed;
+        Vector3 moveDir = new Vector2( (moveX - directionX) * 2, (moveY - directionY) * 2).normalized * speed;
 
-        transform.position += moveDir * Time.deltaTime;
+        if (insectArea.InZone(transform))
+        {
+            transform.position += moveDir * speed * Time.deltaTime;
+        }
+        else
+        //Il veut revenir dans la zone de jeu
+        if (insectArea.CanMoveInDir(transform, moveDir))
+        {
+            transform.position += moveDir * speed * Time.deltaTime;
+        }
 
     }
 

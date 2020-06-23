@@ -7,6 +7,7 @@ public class TongueShoot : MonoBehaviour
 {
     [Header("Component")]
     private InputHandler input = null;
+    [SerializeField] private HighScore scoring = null;
 
     [Header("Variables")]
     [SerializeField] private float radius = 3f;
@@ -27,6 +28,7 @@ public class TongueShoot : MonoBehaviour
             {
                 if (hit.CompareTag("Insect"))
                 {
+                    scoring.scoreChange(hit.GetComponent<InsectBehavior>().point);
                     Destroy(hit.gameObject);
                 }
             }

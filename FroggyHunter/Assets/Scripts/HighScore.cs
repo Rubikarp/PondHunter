@@ -1,11 +1,12 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine.UI;
+using UnityEngine;
+using TMPro;
 
 public class HighScore : MonoBehaviour
 {
     public int _score = 0;
-    public Text score;
-    public Text highScore;
+    public TextMeshProUGUI score;
+    public TextMeshProUGUI highScore;
 
     void Start()
     {
@@ -14,6 +15,8 @@ public class HighScore : MonoBehaviour
             highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
             score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
         }
+
+        scoreChange(0);
     }
 
     public void scoreChange(int point)
