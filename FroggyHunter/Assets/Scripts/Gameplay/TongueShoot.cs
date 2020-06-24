@@ -7,15 +7,22 @@ public class TongueShoot : MonoBehaviour
 {
     [Header("Component")]
     private InputHandler input = null;
-    [SerializeField] private List<Transform> Targets = null;
+    [SerializeField] private Timer timer = null;
     [SerializeField] private HighScore scoring = null;
+    [SerializeField] private InstinctJauge instinct = null;
     [SerializeField] private SpriteRenderer tongue = null;
+    [SerializeField] private List<Transform> Targets = null;
 
     [Header("Variables")]
     [SerializeField] private float radius = 3f;
     [SerializeField] private float tongueFactor = 1f;
     [SerializeField] private float etirSpeed = 200f;
     [SerializeField] private float retractSpeed = 5f;
+
+
+    [Header("OnShoot")]
+    [SerializeField] private float bonusTime = 2f;
+    [SerializeField] private float bonusInstinct = 0.5f;
 
     private void Awake()
     {
@@ -29,16 +36,14 @@ public class TongueShoot : MonoBehaviour
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
 
-            if(hits != null)
-            {
-                //invoque onShoot Event
-            }
-
             foreach (Collider2D hit in hits)
             {
                 if (hit.CompareTag("Insect"))
                 {
-                    StartCoroutine(TongueEtir(0.1f, hit.transform));
+                    StartCoroutine(TongueEtir(0.05f, hit.transform));
+
+                    timer.remainingTime += bonusTime;
+                    instinct.instinct += bonusInstinct;
                 }
             }
         }
@@ -77,7 +82,7 @@ public class TongueShoot : MonoBehaviour
 
     private void TongueRetract()
     {
-        if(tongue.size.x > 0.01f)
+        if(tongue.size.x > 0.1f)
         {
             tongue.size = new Vector2( Mathf.Lerp(tongue.size.x, 0, retractSpeed * Time.deltaTime),1);
 
@@ -105,6 +110,7 @@ public class TongueShoot : MonoBehaviour
             tongue.size = new Vector2(0, 1);
         }
     }
+    
     private void OnDrawGizmos()
     {
         Handles.color = Color.red;

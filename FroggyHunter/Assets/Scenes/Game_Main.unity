@@ -470,7 +470,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 132219593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8, y: -4, z: 0}
+  m_LocalPosition: {x: 9, y: -5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 520487418}
@@ -1014,8 +1014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 1541932145}
-  maxTimer: 60
-  remainingTime: 30
+  maxTimer: 15
+  remainingTime: 15
   partyIsOver: 0
 --- !u!4 &375207251
 Transform:
@@ -1355,7 +1355,7 @@ Transform:
   m_GameObject: {fileID: 497143387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 8, y: 8, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2009827634}
   m_Father: {fileID: 1153166674}
@@ -1374,7 +1374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameArea: {fileID: 520487419}
-  speed: 7
+  speed: 10
 --- !u!58 &497143390
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1805,7 +1805,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670228113}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 4, z: 0}
+  m_LocalPosition: {x: -9, y: 5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 520487418}
@@ -2827,7 +2827,7 @@ MonoBehaviour:
   instinct: 2
   instinctTimeScale: 0.3
   consumSpeed: 1
-  regenSpeed: 0.5
+  regenSpeed: 0.3
 --- !u!114 &1153166673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4908,8 +4908,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2009827634}
   - component: {fileID: 2009827638}
-  - component: {fileID: 2009827637}
   - component: {fileID: 2009827636}
+  - component: {fileID: 2009827637}
   - component: {fileID: 2009827635}
   m_Layer: 0
   m_Name: tongue
@@ -4944,13 +4944,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 089afe92850beeb41861ed04cbd34344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Targets: []
+  timer: {fileID: 375207250}
   scoring: {fileID: 1757121994}
+  instinct: {fileID: 1153166672}
   tongue: {fileID: 898729658}
-  radius: 0.8
+  Targets: []
+  radius: 0.51
   tongueFactor: 1.5
-  etirSpeed: 200
-  retractSpeed: 10
+  etirSpeed: 150
+  retractSpeed: 20
+  bonusTime: 1.5
+  bonusInstinct: 0.5
 --- !u!58 &2009827636
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4979,8 +4983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9551888cfb54a340ac427d69483993d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 3.2
-  speed: 8
+  range: 2
+  speed: 10
 --- !u!212 &2009827638
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5017,8 +5021,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -133306623
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2c81b2207bf8edd4089b04a8e273dea8, type: 3}
   m_Color: {r: 1, g: 0.5, b: 0.8719511, a: 0.5019608}
