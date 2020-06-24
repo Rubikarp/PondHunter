@@ -12,16 +12,24 @@ public class InsectManager : MonoBehaviour
     [SerializeField] private Vector3[] insectSpawnPos = null;
 
     [SerializeField] private Transform insectContainer = null;
-    [SerializeField] private GameObject insectPrefab = null;
+    [SerializeField] private GameObject basicInsect = null;
+    [SerializeField] private GameObject libellule = null;
+    [SerializeField] private GameObject otherInsect = null;
 
     private void Start()
     {        
-        GameObject insect = null;
-
         for (int i = 0; i < 4; i++)
         {
-            insect = Instantiate(insectPrefab, insectSpawnPos[i], Quaternion.identity, insectContainer);
-            insect.GetComponent<InsectBehavior>().insectArea = insectArea;
+            float dice = Random.Range(0f, 100f);
+
+            if(dice < 90)
+            {
+                SpawnInsect( basicInsect, i);
+            }
+            else
+            {
+                SpawnInsect( libellule, i);
+            }
         }
     }
 
@@ -30,10 +38,25 @@ public class InsectManager : MonoBehaviour
         //Verifie qu'il y ai bien 4 insectes
         if(insectList.Count < 4)
         {
-            GameObject insect = Instantiate(insectPrefab, insectSpawnPos[Random.Range(0, insectSpawnPos.Length - 1)], Quaternion.identity, insectContainer);
-            insect.GetComponent<InsectBehavior>().insectArea = insectArea;
-        }
+            float dice = Random.Range(0f, 100f);
 
+            if (dice < 90)
+            {
+                SpawnInsect(basicInsect, Random.Range(0, insectSpawnPos.Length));
+            }
+            else
+            {
+                SpawnInsect(libellule, Random.Range(0, insectSpawnPos.Length));
+            }
+        }
+    }
+
+    private void SpawnInsect(GameObject insectPrefab, int spawnPoint)
+    {
+        GameObject insect = null;
+
+        insect = Instantiate(insectPrefab, insectSpawnPos[spawnPoint], Quaternion.identity, insectContainer);
+        insect.GetComponent<InsectBehavior>().insectArea = insectArea;
 
     }
 
