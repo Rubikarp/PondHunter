@@ -12,7 +12,7 @@ public class InsectBehavior : MonoBehaviour
     public bool isTrapped = false;
 
     [SerializeField] private float speed = 5f;
-    [Range(0, 2)] [SerializeField] private float randomScale = 1f;
+    [SerializeField] private float randomScale = 1f;
     [Range(0, 1)] [SerializeField] private float directionX = 0.5f, directionY = 0.5f;
 
     private Vector2 perlinSeedX = Vector2.zero, perlinSeedY = Vector2.zero;

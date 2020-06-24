@@ -2462,6 +2462,7 @@ MonoBehaviour:
   libellule: {fileID: 7637389429699725843, guid: d5023176708f93744ada44a916d70849,
     type: 3}
   otherInsect: {fileID: 0}
+  insectActif: 4
 --- !u!1 &1099775772
 GameObject:
   m_ObjectHideFlags: 0

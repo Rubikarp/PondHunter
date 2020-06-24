@@ -14,21 +14,23 @@ public class InsectManager : MonoBehaviour
     [SerializeField] private Transform insectContainer = null;
     [SerializeField] private GameObject basicInsect = null;
     [SerializeField] private GameObject libellule = null;
-    [SerializeField] private GameObject otherInsect = null;
+
+    [Header("Variables")]
+    [SerializeField] private float insectActif = 4f;
 
     private void Start()
     {        
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < insectActif; i++)
         {
             float dice = Random.Range(0f, 100f);
 
             if(dice < 90)
             {
-                SpawnInsect( basicInsect, i);
+                SpawnInsect( basicInsect, i % insectSpawnPos.Length);
             }
             else
             {
-                SpawnInsect( libellule, i);
+                SpawnInsect( libellule, i % insectSpawnPos.Length);
             }
         }
     }
@@ -36,7 +38,7 @@ public class InsectManager : MonoBehaviour
     void Update()
     {
         //Verifie qu'il y ai bien 4 insectes
-        if(insectList.Count < 4)
+        if(insectList.Count < insectActif)
         {
             float dice = Random.Range(0f, 100f);
 
