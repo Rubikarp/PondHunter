@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 427015457882775881}
   - component: {fileID: 427015457882775883}
   m_Layer: 0
-  m_Name: BasicInsect
+  m_Name: Mouche
   m_TagString: Insect
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

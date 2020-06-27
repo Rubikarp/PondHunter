@@ -21,6 +21,7 @@ public class TongueShoot : MonoBehaviour
 
 
     [Header("OnShoot")]
+    public bool isShooting = false;
     [SerializeField] private float bonusTime = 2f;
     [SerializeField] private float bonusInstinct = 0.5f;
 
@@ -32,7 +33,7 @@ public class TongueShoot : MonoBehaviour
     private void Update()
     {
         //Quand tu tires
-        if (input.shootExit && Targets.Count == 0)
+        if (input.shootExit && !isShooting)
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
 
@@ -40,6 +41,7 @@ public class TongueShoot : MonoBehaviour
             {
                 if (hit.CompareTag("Insect"))
                 {
+                    isShooting = true;
                     StartCoroutine(TongueEtir(0.05f, hit.transform));
 
                     timer.remainingTime += bonusTime;
@@ -56,6 +58,7 @@ public class TongueShoot : MonoBehaviour
         float time = shootDuration;
         float portee = Vector2.Distance(tongue.transform.position, transform.position);
 
+        Targets.Add(target);
         target.GetComponent<InsectBehavior>().isTrapped = true;
 
         while (0 < time) 
@@ -72,7 +75,6 @@ public class TongueShoot : MonoBehaviour
             yield return 0; //go to next frame
         }
 
-        Targets.Add(target);
         target.SetParent(tongue.transform);
 
         scoring.scoreChange(target.GetComponent<InsectBehavior>().point);
@@ -91,8 +93,12 @@ public class TongueShoot : MonoBehaviour
                 foreach (Transform target in Targets)
                 {
                     Vector3 pos = new Vector3( target.position.x - tongue.transform.position.x, target.position.y - tongue.transform.position.y, 0).normalized;
-                    target.position = tongue.transform.position + pos * tongue.size.x * 0.5f;
+                    target.position = tongue.transform.position + pos * tongue.size.x;
                 }
+            }
+            else
+            {
+                isShooting = false;
             }
         }
         else
@@ -105,6 +111,12 @@ public class TongueShoot : MonoBehaviour
                 }
 
                 Targets.Clear();
+                isShooting = false;
+
+            }
+            else
+            {
+                isShooting = false;
             }
 
             tongue.size = new Vector2(0, 1);
