@@ -54,7 +54,7 @@ public class TongueShoot : MonoBehaviour
     private IEnumerator TongueEtir(float shootDuration, Transform target)
     {
         float time = shootDuration;
-        float porter = Vector2.Distance(tongue.transform.position, transform.position);
+        float portee = Vector2.Distance(tongue.transform.position, transform.position);
 
         target.GetComponent<InsectBehavior>().isTrapped = true;
 
@@ -64,10 +64,10 @@ public class TongueShoot : MonoBehaviour
 
             Time.timeScale = 0.05f;
 
-            porter = Vector2.Distance(tongue.transform.position, transform.position);
+            portee = Vector2.Distance(tongue.transform.position, transform.position);
 
             target.position = transform.position;
-            tongue.size = new Vector2(Mathf.Lerp(tongue.size.x, porter * tongueFactor, etirSpeed * Time.deltaTime), 1);
+            tongue.size = new Vector2(Mathf.Lerp(tongue.size.x, portee * tongueFactor, etirSpeed * Time.deltaTime), 1);
 
             yield return 0; //go to next frame
         }
