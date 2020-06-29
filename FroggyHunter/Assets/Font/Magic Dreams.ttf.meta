@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 081f6c10115900e4eac2b161216359c9
+guid: cd69aeb9d94fcab4a81046afb9e134d8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: 851Gkktt
+  fontName: Magic Dreams
   fontNames:
-  - 851Gkktt
+  - Magic Dreams
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

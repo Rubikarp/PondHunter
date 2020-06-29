@@ -1,5 +1,4 @@
-﻿using UnityEngine.UI;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class HighScore : MonoBehaviour
@@ -12,8 +11,8 @@ public class HighScore : MonoBehaviour
     {
         if(highScore != null)
         {
-            highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
-            score.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+            highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString("000 000");
+            score.text = PlayerPrefs.GetInt("Score", 0).ToString("000 000");
         }
 
         scoreChange(0);
@@ -31,7 +30,7 @@ public class HighScore : MonoBehaviour
 
         if (score != null)
         {
-            score.text = _score.ToString();
+            score.text = _score.ToString("000 000");
         }
     }
 
