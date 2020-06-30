@@ -9,7 +9,7 @@ namespace Game
 
         void Start()
         {
-            lastselect = new GameObject();
+            lastselect = gameObject;
         }
 
         void Update()

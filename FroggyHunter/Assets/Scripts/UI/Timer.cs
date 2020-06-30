@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Timer : MonoBehaviour
     public float remainingTime = 30f;
 
     [SerializeField] private bool partyIsOver = false;
+    [SerializeField] private UnityEvent onEnd;
 
     private void Start()
     {
@@ -31,9 +33,10 @@ public class Timer : MonoBehaviour
             slider.value = remainingTime;
         }
 
-        if (remainingTime > 0 && !partyIsOver)
+        if (remainingTime <= 0 && !partyIsOver)
         {
             partyIsOver = true;
+            onEnd?.Invoke();
         }
     }
 

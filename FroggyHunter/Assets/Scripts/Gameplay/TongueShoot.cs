@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TongueShoot : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class TongueShoot : MonoBehaviour
     public bool isShooting = false;
     [SerializeField] private float bonusTime = 2f;
     [SerializeField] private float bonusInstinct = 0.5f;
+    [SerializeField] private UnityEvent onShoot;
 
     private void Awake()
     {
@@ -46,6 +48,8 @@ public class TongueShoot : MonoBehaviour
 
                     timer.remainingTime += bonusTime;
                     instinct.instinct += bonusInstinct;
+
+                    onShoot?.Invoke();
                 }
             }
         }
