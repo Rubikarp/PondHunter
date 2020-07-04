@@ -1,10 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
+    [SerializeField] private string sceneToGo;
+
+    public void GoToSerializedScene()
+    {
+        SceneManager.LoadScene(sceneToGo);
+    }
+
+    public void GoToSceneIn(float time)
+    {
+        Invoke("GoToSerializedScene", time);
+    }
+
+    public void NextSceneIn(float time)
+    {
+        Invoke("NextScene", time);
+    }
+
+    public void PreviousSceneIn(float time)
+    {
+        Invoke("PreviousScene", time);
+    }
+
+    public void QuitGameIn(float time)
+    {
+        Invoke("QuitGame", time);
+    }
+
+    public void GoToScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void NextScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -13,11 +43,6 @@ public class Scene : MonoBehaviour
     public void PreviousScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    }
-
-    public void GoToScene(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 
     public void QuitGame()
