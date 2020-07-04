@@ -27,4 +27,5 @@ public class Transition : MonoBehaviour
         LeanTween.moveX(rightPart, 0, 1).setEaseInQuad();
         LeanTween.moveX(leftPart,  0, 1).setEaseInQuad();
     }
+
 }
