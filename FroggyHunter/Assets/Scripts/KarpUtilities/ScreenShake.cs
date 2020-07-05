@@ -37,7 +37,7 @@ namespace Management
                 transform.localRotation = Quaternion.Euler(newPosRotate * traumaMagnitudeRotation * cameraShake);
 
                 //Déclin du screen shake
-                trauma -= Time.deltaTime * (1 / traumaFallFactor) + (cameraShake / 300);
+                trauma -= Time.unscaledDeltaTime * (1 / traumaFallFactor) + (cameraShake / 300);
             }
             else
             {

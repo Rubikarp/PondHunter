@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 15788048}
   - component: {fileID: 15788049}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: PostProcess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -403,7 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGlobal: 1
-  priority: 0
+  priority: -100
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 9c79e5a547ba8164e9224c690fce6e45, type: 2}
@@ -1031,6 +1031,7 @@ GameObject:
   - component: {fileID: 257025967}
   - component: {fileID: 257025970}
   - component: {fileID: 257025968}
+  - component: {fileID: 257025969}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1084,6 +1085,24 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
+--- !u!114 &257025969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257025966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ead5b0a20506a27449ea04a65feb8cb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trauma: 0
+  traumaMultiply: 3
+  traumaFrequency: 25
+  traumaMagnitudeTranslate: 2
+  traumaMagnitudeRotation: 30
+  traumaFallFactor: 0.5
 --- !u!20 &257025970
 Camera:
   m_ObjectHideFlags: 0
@@ -5192,6 +5211,7 @@ MonoBehaviour:
   slider: {fileID: 1541932145}
   maxTimer: 30
   remainingTime: 30
+  lookTime: 0
   partyIsOver: 0
   onEnd:
     m_PersistentCalls:
@@ -16853,6 +16873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0286d683346c984f91c89af6d480457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneToGo: 
 --- !u!1 &1802771415
 GameObject:
   m_ObjectHideFlags: 0
@@ -17314,6 +17335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1308510027}
   scoring: {fileID: 1554769518}
+  scrShake: {fileID: 257025969}
   instinct: {fileID: 1153166672}
   tongue: {fileID: 1611310964}
   Targets: []

@@ -8,7 +8,8 @@ public class Timer : MonoBehaviour
 
     [SerializeField] private float maxTimer = 60f;
     public float remainingTime = 30f;
-
+    [SerializeField] private bool lookTime = false;
+    [Space(15)]
     [SerializeField] private bool partyIsOver = false;
     [SerializeField] private UnityEvent onEnd;
 
@@ -27,7 +28,7 @@ public class Timer : MonoBehaviour
             remainingTime = maxTimer;
         }
 
-        if (remainingTime > 0)
+        if (remainingTime > 0 & !lookTime)
         {
             remainingTime -= Time.deltaTime;
             slider.value = remainingTime;

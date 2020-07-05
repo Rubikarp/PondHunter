@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
+using Management;
 
 public class TongueShoot : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class TongueShoot : MonoBehaviour
     private InputHandler input = null;
     [SerializeField] private Timer timer = null;
     [SerializeField] private HighScore scoring = null;
+    [SerializeField] private ScreenShake scrShake = null;
     [SerializeField] private InstinctJauge instinct = null;
     [SerializeField] private SpriteRenderer tongue = null;
     [SerializeField] private List<Transform> Targets = null;
@@ -46,6 +48,7 @@ public class TongueShoot : MonoBehaviour
                     isShooting = true;
                     StartCoroutine(TongueEtir(0.05f, hit.transform));
 
+                    scrShake.trauma = 1;
                     timer.remainingTime += bonusTime;
                     instinct.instinct += bonusInstinct;
 
