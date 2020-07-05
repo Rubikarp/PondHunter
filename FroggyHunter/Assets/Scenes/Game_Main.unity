@@ -1100,8 +1100,8 @@ MonoBehaviour:
   trauma: 0
   traumaMultiply: 3
   traumaFrequency: 25
-  traumaMagnitudeTranslate: 2
-  traumaMagnitudeRotation: 30
+  traumaMagnitudeTranslate: 1
+  traumaMagnitudeRotation: 15
   traumaFallFactor: 0.5
 --- !u!20 &257025970
 Camera:
