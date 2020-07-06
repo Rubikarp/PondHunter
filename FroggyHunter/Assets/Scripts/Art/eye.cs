@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Eye : MonoBehaviour
+public class eye : MonoBehaviour
 {
     [SerializeField] float range = 0.2f;
     [SerializeField] float lookSpeed = 5.0f;

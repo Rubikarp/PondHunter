@@ -12048,6 +12048,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602fe832624060940913e350e0ea47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 0.2
+  lookSpeed: 5
+  target: {fileID: 2009827634}
 --- !u!1 &722762469
 GameObject:
   m_ObjectHideFlags: 0
@@ -12575,6 +12578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 602fe832624060940913e350e0ea47ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  range: 0.2
+  lookSpeed: 5
+  target: {fileID: 2009827634}
 --- !u!1 &842012097
 GameObject:
   m_ObjectHideFlags: 0
