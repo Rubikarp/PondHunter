@@ -6,6 +6,7 @@ public class HighScore : MonoBehaviour
     public int _score = 0;
     public TextMeshProUGUI score;
     public TextMeshProUGUI highScore;
+    public ParticleSystem particleScore;
 
     void Start()
     {
@@ -21,6 +22,7 @@ public class HighScore : MonoBehaviour
     public void scoreChange(int point)
     {
         _score += point;
+        particleScore.Play(true);
         PlayerPrefs.SetInt("Score", _score);
 
         if (_score > PlayerPrefs.GetInt("HighScore", 0))

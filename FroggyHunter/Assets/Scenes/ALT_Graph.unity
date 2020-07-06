@@ -2048,7 +2048,7 @@ GameObject:
   - component: {fileID: 1497108583}
   - component: {fileID: 1497108582}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: ScoreParticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
