@@ -62,6 +62,7 @@ public class InsectManager : MonoBehaviour
 
     }
 
+#if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Handles.color = Color.red;
@@ -71,4 +72,5 @@ public class InsectManager : MonoBehaviour
             Handles.DrawSolidDisc(pos, transform.forward, 0.1f);
         }
     }
+#endif
 }

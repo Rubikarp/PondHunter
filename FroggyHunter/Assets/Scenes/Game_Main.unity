@@ -27095,7 +27095,7 @@ MonoBehaviour:
   etirSpeed: 150
   retractSpeed: 50
   isShooting: 0
-  bonusTime: 1.5
+  bonusTime: 0.75
   bonusInstinct: 0.5
   onShoot:
     m_PersistentCalls:

@@ -13,20 +13,37 @@ public class HighScore : MonoBehaviour
 
     void Start()
     {
-        if(highScore != null)
+        if (highScore != null)
         {
-            highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString("000 000");
-            score.text = PlayerPrefs.GetInt("Score", 0).ToString("000 000");
+            highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString("0 000");
+            score.text = PlayerPrefs.GetInt("Score", 0).ToString("0 000");
         }
 
-        scoreChange(0);
+        if (isInGame)
+        {
+            scoreChange(0);
+        }
+    }
+
+    private void Update()
+    {
+        if (isInGame)
+        {
+            if (Input.GetKeyDown("p"))
+            {
+                scoreChange(1);
+            }
+        }
     }
 
     public void scoreChange(int point)
     {
         _score += point;
-        if (isInGame) { particleScore.Play(true); }
-
+        if (isInGame) 
+        {
+            particleScore.Play(true); 
+        }
+        
         PlayerPrefs.SetInt("Score", _score);
 
         if (_score > PlayerPrefs.GetInt("HighScore", 0))
@@ -36,7 +53,7 @@ public class HighScore : MonoBehaviour
 
         if (score != null)
         {
-            score.text = _score.ToString("000 000");
+            score.text = _score.ToString("0 000");
         }
     }
 
