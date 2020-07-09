@@ -16,10 +16,10 @@ public class InputHandler : Singleton<InputHandler>
     public bool shootExit;
     public bool shootEnter;
 
-    [HeaderAttribute("PullInsect")]
-    public bool pull;
-    public bool pullExit;
-    public bool pullEnter;
+    [HeaderAttribute("Instinct")]
+    public bool instinct;
+    public bool instinctExit;
+    public bool instinctEnter;
 
     private void Update()
     {
@@ -38,9 +38,9 @@ public class InputHandler : Singleton<InputHandler>
         shootExit = Input.GetButtonUp("Fire1");
         shootEnter = Input.GetButtonDown("Fire1");
 
-        pull = Input.GetButton("Fire2");
-        pullExit = Input.GetButtonUp("Fire2");
-        pullEnter = Input.GetButtonDown("Fire2");
+        instinct = Input.GetButton("Fire2");
+        instinctExit = Input.GetButtonUp("Fire2");
+        instinctEnter = Input.GetButtonDown("Fire2");
 
     }
 

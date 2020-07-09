@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: Allie&Karp
   productName: CrocMouche
-  defaultCursor: {fileID: 2800000, guid: 5d5cddb5cb152084a97c80c55fe36845, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.05, g: 0.1, b: 0.05, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -124,7 +124,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.0
+  bundleVersion: 1.1
   preloadedAssets:
   - {fileID: 11400000, guid: d75ae980da3a32b46a19606a8d09de21, type: 2}
   metroInputSource: 0

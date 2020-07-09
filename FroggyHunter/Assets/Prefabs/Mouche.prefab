@@ -135,8 +135,8 @@ MonoBehaviour:
   insectArea: {fileID: 0}
   point: 10
   isTrapped: 0
-  speed: 4
-  randomScale: 2
+  speed: 3.6
+  randomScale: 4
   directionX: 0.465
   directionY: 0.465
 --- !u!82 &7852279138978596812

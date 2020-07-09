@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
 
 public class HighScore : MonoBehaviour
@@ -8,7 +9,7 @@ public class HighScore : MonoBehaviour
     public TextMeshProUGUI highScore;
 
     public bool isInGame = true;
-    public ParticleSystem particleScore;
+    public List<ParticleSystem> particleScore;
 
 
     void Start()
@@ -41,7 +42,10 @@ public class HighScore : MonoBehaviour
         _score += point;
         if (isInGame) 
         {
-            particleScore.Play(true); 
+            foreach(ParticleSystem particle in particleScore)
+            {
+                particle.Play(true);
+            }
         }
         
         PlayerPrefs.SetInt("Score", _score);

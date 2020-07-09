@@ -37,7 +37,7 @@ public class TongueShoot : MonoBehaviour
     private void Update()
     {
         //Quand tu tires
-        if (input.shootExit && !isShooting)
+        if (input.shootEnter && !isShooting)
         {
             Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, radius);
 
@@ -54,6 +54,15 @@ public class TongueShoot : MonoBehaviour
 
                     onShoot?.Invoke();
                 }
+            }
+
+            if (!isShooting)
+            {
+                isShooting = true;
+                StartCoroutine(TongueEtirEmpty(0.01f, transform));
+                onShoot?.Invoke();
+
+                Debug.Log("ça mache");
             }
         }
 
@@ -89,14 +98,35 @@ public class TongueShoot : MonoBehaviour
         yield return 0;
     }
 
+    private IEnumerator TongueEtirEmpty(float shootDuration, Transform target)
+    {
+        float time = shootDuration;
+        float portee = Vector2.Distance(tongue.transform.position, transform.position);
+
+        while (0 < time)
+        {
+            time -= Time.deltaTime;
+
+            Time.timeScale = 0.05f;
+
+            portee = Vector2.Distance(tongue.transform.position, transform.position);
+
+            target.position = transform.position;
+            tongue.size = new Vector2(Mathf.Lerp(tongue.size.x, portee * tongueFactor, etirSpeed * Time.deltaTime), 1);
+
+            yield return 0; //go to next frame
+        }
+        yield return 0;
+    }
+
     private void TongueRetract()
     {
         if(tongue.size.x > 0.1f)
         {
-            tongue.size = new Vector2( Mathf.Lerp(tongue.size.x, 0, retractSpeed * Time.deltaTime),1);
-
             if(Targets != null)
             {
+                tongue.size = new Vector2(Mathf.Lerp(tongue.size.x, 0, retractSpeed * Time.deltaTime), 1);
+
                 foreach (Transform target in Targets)
                 {
                     Vector3 pos = new Vector3( target.position.x - tongue.transform.position.x, target.position.y - tongue.transform.position.y, 0).normalized;
@@ -105,7 +135,7 @@ public class TongueShoot : MonoBehaviour
             }
             else
             {
-                isShooting = false;
+                tongue.size = new Vector2(Mathf.Lerp(tongue.size.x, 0, retractSpeed * 2 * Time.deltaTime), 1);
             }
         }
         else

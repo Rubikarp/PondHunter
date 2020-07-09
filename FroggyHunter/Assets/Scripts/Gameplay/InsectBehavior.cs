@@ -51,4 +51,14 @@ public class InsectBehavior : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("InsectZone"))
+        {
+            Vector2 dir = gameObject.GetComponent<InscetChangeDir>().Direction;
+            directionX = dir.x;
+            directionY = dir.y;
+        }
+    }
+
 }

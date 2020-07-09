@@ -12,9 +12,7 @@ public class InstinctJauge : MonoBehaviour
     [Header("Variables")]
     [SerializeField] private float maxInstinct = 2f;
     public float instinct = 2f;
-
     [SerializeField] private float instinctTimeScale = 0.3f;
-
     [SerializeField] private float consumSpeed = 1f;
     [SerializeField] private float regenSpeed = 0.5f;
     
@@ -37,7 +35,7 @@ public class InstinctJauge : MonoBehaviour
             instinct = maxInstinct;
         }
 
-        if (input.shoot)
+        if (input.instinct)
         {
             if (instinct > 0)
             {
